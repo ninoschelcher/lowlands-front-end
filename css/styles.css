@@ -1,0 +1,442 @@
+@font-face {
+    font-family: "Open89";
+    font-weight: 400;
+    font-stretch: normal;
+    src: url("../fonts/LLHvH-Open89.woff2");
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active header {
+    overflow: hidden;
+    width: 100vw;
+    margin: 0;
+
+}
+
+nav {
+    background-color: #0F25CC;
+    height: 10vh;
+    position: fixed;
+    line-height: 10vh;
+    box-shadow: inset 0 -16px 12px -10px rgba(0, 0, 0, .85);
+    width: 100vw;
+    overflow: hidden;
+    z-index: 999;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+    margin: 0 auto;
+    text-transform: uppercase;
+    overflow-y: hidden;
+    max-width: 82vw;
+    padding-inline-start: 0;
+    color: #fff;
+}
+
+nav ul li:last-child a::after {
+    content: '\f0d7';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    padding-left: 0.5vw;
+}
+
+nav ul li a.active::before {
+    content: '\f0da';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    padding-right: 0.3vw;
+    transition: 0.3s;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-family: "Open89", sans-serif;
+    transition: 0.3s;
+    font-weight: 300;
+    font-size: 0.9m;
+    padding: 20px 25px;
+}
+
+nav ul li a:hover {
+    color: #4cd066;
+}
+
+nav ul li:nth-child(5) img {
+    padding-top: 2vh;
+}
+
+.home main #banner {
+    max-height: 60vh;
+}
+
+.home main #banner #myVideo {
+    width: 100%;
+    object-fit: cover;
+    max-height: 60vh;
+}
+
+.home main section:nth-child(2) {
+    background-image: url("../media/homebackground.png");
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+}
+
+/*************************************************/
+/*********************Programma*******************/
+/*************************************************/
+
+.programma #banner #myVideo,
+.tameimpala #banner #myVideo {
+    width: 100%;
+    object-fit: cover;
+    height: 60vh;
+    box-shadow: inset 0 -16px 12px -10px rgba(0, 0, 0, .85);
+    overflow: hidden;
+}
+
+.programma {
+    background-image: url("../media/programma-background.png");
+}
+
+.programma #filters {
+    height: 13vh;
+    background-color: #4CD066;
+    margin: -2% 0;
+    box-shadow: inset 0 -16px 12px -10px rgba(0, 0, 0, .85);
+}
+
+.fa,
+.fas {
+    font-weight: 900;
+    font-size: 1.8em;
+}
+
+.programma #filters ul {
+    display: flex;
+    padding: 1em;
+    margin: 1em 8em;
+    padding-inline-start: 0;
+}
+
+.programma #filters ul li {
+    list-style: none;
+    font-family: "Open89";
+    text-transform: uppercase;
+    line-height: 2em;
+    padding: 1em;
+    transition: 0.3s;
+}
+
+.programma #filters ul li a {
+    text-decoration: none;
+    transition: 0.3s;
+    color: #fff;
+}
+
+.programma #filters ul li a:hover {
+    color: #0026cc;
+}
+
+.programma #filters ul li:first-child a::before,
+.programma #filters ul li:nth-child(2) a::before {
+    content: '\f067';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    padding-right: 0.7vw;
+}
+
+.programma #filters ul li:nth-child(-0n+2) {
+    margin-right: auto;
+}
+
+.programma section:nth-child(3) {
+    margin-top: 4vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 5vh 7vw;
+}
+
+.programma section:nth-child(4) {
+    margin-top: 4vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 3fr));
+    padding: 5vh 7vw;
+    grid-gap: 2em;
+}
+
+.programma section:nth-child(3) a {
+    text-decoration: none;
+    color: #000;
+}
+
+.programma #tweekolom article {
+    background-color: #4CD066;
+    box-shadow: inset 0 0 15px 11px rgba(0, 0, 0, .85);
+    transition: 0.3s;
+    margin: 2.5em auto;
+    padding: 3vw;
+}
+
+.programma #driekolom article {
+    background-color: #4CD066;
+    box-shadow: inset 0 0 15px 11px rgba(0, 0, 0, .85);
+    transition: 0.3s;
+    padding: 2vw;
+}
+
+.programma section article:hover {
+    transform: scale(.75);
+}
+
+.programma section article p:first-child {
+    font-family: "Open89";
+    color: #fff;
+    font-size: 0.5em;
+    margin: 0;
+    padding: 1.5em 0;
+    text-transform: uppercase;
+}
+
+.programma #driekolom a {
+    color: transparent;
+}
+
+.programma section article h2 {
+    font-family: "Open89";
+    text-transform: uppercase;
+    font-size: 1.8em;
+    letter-spacing: 2px;
+    margin: 0.3em 0;
+    text-decoration: none;
+    color: #000;
+}
+
+.programma section article img {
+    z-index: -1;
+    width: 100%;
+}
+
+.programma section article .shadow {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.programma section article .shadow::after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 0 15px 11px rgba(0, 0, 0, .85);
+    bottom: 0;
+    display: block;
+    content: "";
+}
+
+/*************************************************/
+/*******************Tame Impala*******************/
+/*************************************************/
+
+.tameimpala section {
+    background-image: url("../media/tameimpalabackground.png");
+    padding: 4em 0em;
+    margin: -2% 0;
+}
+
+.tameimpala section article {
+    background-color: #4CD066;
+    max-width: 60%;
+    margin: 2em auto;
+    padding: 4em;
+    box-shadow: inset 0 0 15px 11px rgba(0, 0, 0, .85);
+    min-height: 50vh;
+}
+
+.tameimpala section article:first-child p:first-child {
+    font-family: "Open89";
+    text-transform: uppercase;
+    color: #fff;
+    margin: 0;
+}
+
+.tameimpala section article h1 {
+    font-family: "Open89";
+    font-size: 3em;
+    text-transform: uppercase;
+    margin: 0.5em 0em;
+}
+
+.tameimpala section article img {
+    max-width: 45vw;
+}
+
+.tameimpala section article:first-child p:last-child {
+    font-family: "Montserrat";
+    word-spacing: 0.2em;
+}
+
+.tameimpala iframe {
+    width: 70%;
+    height: 50vh;
+}
+
+.tameimpala article:last-child ul {
+    float: right;
+}
+
+.tameimpala ul li {
+    list-style: none;
+    font-family: "Open89";
+    padding-right: 2em;
+}
+
+.tameimpala ul li a::before {
+    content: '\f0da';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    padding-right: 0.3vw;
+}
+
+.tameimpala section ul li a {
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.tameimpala section ul li p {
+    color: #000;
+    text-transform: uppercase;
+}
+
+
+
+/*************************************************/
+/*****************Footer**************************/
+/*************************************************/
+
+footer {
+    font-family: "Open89";
+}
+
+footer ul {
+    display: flex;
+    list-style: none;
+}
+
+footer ul:first-child {
+    background-color: #0026cc;
+    height: 20vh;
+    line-height: 9em;
+    padding-left: 15%;
+    border-top: 1px solid #fff;
+}
+
+footer ul:first-child a {
+    color: #fff;
+    padding-right: 2em;
+    text-decoration: none;
+}
+
+footer ul:last-child {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    background-color: #fff;
+    height: 14vh;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+footer ul:last-child li img {
+    width: 100%;
+    height: auto;
+}
+
+
+/*************************************************/
+/*****************Media Queries*******************/
+/*************************************************/
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 565px) {
+
+
+    .programma section:nth-child(3) article {
+        margin: 0;
+        max-width: 80%;
+    }
+
+
+    .programma section:nth-child(4) {
+        grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+
+    }
+
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 1230px) {
+    .tameimpala article:last-child ul {
+        float: none;
+    }
+
+    .programma section:nth-child(3),
+    .programma section:nth-child(4) {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
+
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 800px) {
+    header {
+        overflow-x: scroll;
+    }
+
+    header nav ul {
+        justify-content: flex-start;
+    }
+
+    .programma #filters ul {
+        margin: 0;
+        overflow: hidden;
+    }
+
+    .tameimpala section article {
+        max-width: 80%;
+    }
+
+    footer ul:first-child a {
+        font-size: 0.5em;
+    }
+
+    .programma #filters ul li a {
+        font-size: 0.8em;
+    }
+
+
+}
+
+@media only screen and (max-device-width :1250px) {
+    .tameimpala article:last-child iframe {
+        width: 100%;
+    }
+
+    .tameimpala article:last-child ul {
+        float: none;
+    }
+}
