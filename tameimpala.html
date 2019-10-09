@@ -13,41 +13,52 @@
 
 <body>
     <header>
+        <button class="hamburgerknop"><i class="fas fa-bars"></i></button>
         <nav>
             <ul>
                 <li><a href="blokkenschema.html">Blokkenschema</a></li>
                 <li><a href="nieuws">Nieuws</a></li>
                 <li><a href="faq">FAQ</a></li>
                 <li><a class="active" href="programma.html">Programma</a></li>
-                <li><a href="index.html"><img src="media/logo.png" alt=""></a></img></li>
+                <li><a href="index.html"><img src="media/logo.png" alt=""></a></li>
                 <li><a href="tickets">Tickets</a></li>
                 <li><a href="plattegrond">Plattegrond</a></li>
                 <li><a href="english">English</a></li>
-                <li><a href="#">Meer</a></li>
+                <li><a id="meer" href="#">Meer</a></li>
             </ul>
         </nav>
     </header>
 
+    <div id="meermenu">
+        <a id="close" href="#">X</a>
+        <ul>
+            <li><a href="#">Achtergrond</a></li>
+            <li><a href="#">Green & Clean</a></li>
+            <li><a href="#">Over lowlands</a></li>
+        </ul>
+    </div>
+
 
     <main class="tameimpala">
 
-        <div id="banner">
-            <video autoplay muted loop id="myVideo">
-                <source src="media/programmavideo.mp4" type="video/mp4">
-            </video>
-        </div>
+        <video autoplay muted loop>
+            <source src="media/programmavideo.mp4" type="video/mp4">
+        </video>
 
         <section>
             <article>
                 <p>Zondag 21:30-23:00 / Alpha</p>
                 <h1>Tame Impala</h1>
-                <img src="media/tameimpala2.jpg" alt="tameimpala">
+                <div class="shadow">
+                    <img src="media/tameimpala2.jpg" alt="tameimpala">
+                </div>
                 <p>Dat de hypnotiserende sound van Tame Impala grootse potentie had,
                     wisten we al toen de band in 2010 zijn debuutalbum uitbracht – niet
                     voor niets staan we er sindsdien op dat de Australiërs zo nu en dan naar Lowlands komen.
                     Met de talloze hints naar een nieuw album is de kans groot
                     dat kippenvelhits als Let It Happen en The Less I Know the Better tijdens
-                    hun show straks in Biddinghuizen worden aangevuld met nieuwe magie van de dromende hoeders van de
+                    hun show straks in Biddinghuizen worden aangevuld met nieuwe magie van de dromende hoeders van
+                    de
                     psychedelische pop.</p>
             </article>
 
@@ -69,6 +80,7 @@
 
                 </ul>
             </article>
+
         </section>
     </main>
 
@@ -96,6 +108,7 @@
             <li><a href=""><img src="media/npo3fm.png" alt=""></a></li>
         </ul>
     </footer>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

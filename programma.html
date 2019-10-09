@@ -13,146 +13,194 @@
 
 <body>
     <header>
+        <button id="hamburgerknop"><i class="fas fa-bars"></i></button>
         <nav>
             <ul>
                 <li><a href="blokkenschema.html">Blokkenschema</a></li>
                 <li><a href="nieuws">Nieuws</a></li>
                 <li><a href="faq">FAQ</a></li>
                 <li><a class="active" href="programma.html">Programma</a></li>
-                <li><a href="index.html"><img src="media/logo.png" alt=""></a></img></li>
+                <li><a href="index.html"><img src="media/logo.png" alt=""></a></li>
                 <li><a href="tickets">Tickets</a></li>
                 <li><a href="plattegrond">Plattegrond</a></li>
                 <li><a href="english">English</a></li>
-                <li><a href="#">Meer</a></li>
+                <li><a id="meer" href="#">Meer</a></li>
             </ul>
         </nav>
     </header>
 
+    <div id="meermenu">
+        <a id="close" href="#">X</a>
+        <ul>
+            <li><a href="#">Achtergrond</a></li>
+            <li><a href="#">Green & Clean</a></li>
+            <li><a href="#">Over lowlands</a></li>
+        </ul>
+    </div>
+
+
+
 
     <main class="programma">
+        
+        <video autoplay muted loop>
+            <source src="media/programmavideo.mp4" type="video/mp4">
+        </video>
 
-        <div id="banner">
-            <video autoplay muted loop id="myVideo">
-                <source src="media/programmavideo.mp4" type="video/mp4">
-            </video>
-        </div>
-
-        <div id="filters">
+        <div>
             <ul>
-                <li><a href="">Categorieën</a></li>
-                <li><a href="">Favorieten</a></li>
-                <li><a href=""><i class="fas fa-ellipsis-h"></i></a></li>
-                <li><a href=""><i class="fas fa-list"></i></a></li>
+                <li><button class="active" id="categorie">Categorieën</button></li>
+                <li><button>Favorieten</button></li>
+                <li><button><i class="fas fa-ellipsis-h"></i></button></li>
+                <li><button><i class="fas fa-list"></i></button></li>
             </ul>
         </div>
 
-        <section id="tweekolom">
-            <article>
-                <a href="tameimpala.html">
-                    <p>PSYCHEDELISCHE HARMONIEËN VOOR IEDEREEN</p>
-                    <h2>Tame Impala</h2>
-                    <div class="shadow">
-                        <img src="media/tameimpala.jpg" alt="tameimpala">
-                    </div>
-                </a>
-            </article>
+        <div id="criteria">
+            <ul>
+                <li><button>Alles</button></li>
+                <li><button>Muziek</button></li>
+                <li><button>Wetenschap</button></li>
+                <li><button>Comedy</button></li>
+                <li><button>Theater en Dans</button></li>
+                <li><button>Literatuur</button></li>
+                <li><button>Specials</button></li>
+                <li><button>Buitentheater</button></li>
+                <li><button>Film</button></li>
+                <li><button>Kunst</button></li>
+                <li><button>Tallk Talkk Tallk</button></li>
+            </ul>
 
-            <article>
-                <a href="#">
-                    <p>GENREBENDERS DOEN SALTO’S EN CROWDSURFS</p>
-                    <h2>Twenty One Pilots</h2>
-                    <div class="shadow">
-                        <img src="media/twentyonepilots.jpg" alt="twentyonepilots">
-                    </div>
-                </a>
-            </article>
+        </div>
 
-            <article>
-                <a href="#">
-                    <p>ROCKFENOMENALE LOWLANDS-ONLY SHOW</p>
-                    <h2>De Staat</h2>
-                    <div class="shadow">
-                        <img src="media/destaat.jpg" alt="destaat">
-                    </div>
-                </a>
-            </article>
+        <section>
+            <div class="achtergrond">
+                <article>
+                    <a href="tameimpala.html">
+                        <p>Psychedelische harmonieeen voor idereen</p>
+                        <h2>Tame Impala / Indie</h2>
+                        <div class="shadow">
+                            <img src="media/tameimpala.jpg" alt="tameimpala">
+                        </div>
+                    </a>
+                </article>
+            </div>
 
-            <article>
-                <a href="#">
-                    <p>MET BASSEN BLAZENDE A$AP MOB-TELG</p>
-                    <h2>A$AP Rocky</h2>
-                    <div class="shadow">
-                        <img src="media/asaprocky.jpg" alt="asaprocky">
-                    </div>
-                </a>
-            </article>
+            <div class="achtergrond">
+                <article>
+                    <a href="#">
+                        <p>GENREBENDERS DOEN SALTO’S EN CROWDSURFS</p>
+                        <h2>Twenty One Pilots / Electronic</h2>
+                        <div class="shadow">
+                            <img src="media/twentyonepilots.jpg" alt="twentyonepilots">
+                        </div>
+                    </a>
+                </article>
+            </div>
+
+            <div class="achtergrond">
+                <article>
+                    <a href="#">
+                        <p>ROCKFENOMENALE LOWLANDS-ONLY SHOW</p>
+                        <h2>De Staat / Pop</h2>
+                        <div class="shadow">
+                            <img src="media/destaat.jpg" alt="destaat">
+                        </div>
+                    </a>
+                </article>
+            </div>
+
+            <div class="achtergrond">
+                <article>
+                    <a href="#">
+                        <p>Met bassen blazen de A$AP mob-telg</p>
+                        <h2>A$AP Rocky / Urban</h2>
+                        <div class="shadow">
+                            <img src="media/asaprocky.jpg" alt="asaprocky">
+                        </div>
+                    </a>
+                </article>
+            </div>
+
         </section>
 
-        <section id="driekolom">
-            <article>
-                <a href="#">
-                    <p>Feesten zonder Hokjes</p>
-                    <h2>Adonis</h2>
-                    <div class="shadow">
-                        <img src="media/adonis.jpg" alt="adonis">
-                    </div>
-                </a>
-            </article>
+        <section>
 
-            <article>
-                <a href="#">
-                    <p>Vinylnerd neemt zijn halve zaak mee</p>
-                    <h2>Antal</h2>
-                    <div class="shadow">
-                        <img src="media/antal.jpg" alt="antal">
-                    </div>
-                </a>
-            </article>
+            <div class="achtergrond">
+                <article>
+                    <a href="#">
+                        <p>Feesten zonder Hokjes</p>
+                        <h2>Adonis / Specials</h2>
+                        <div class="shadow">
+                            <img src="media/adonis.jpg" alt="adonis">
+                        </div>
+                    </a>
+                </article>
+            </div>
 
-            <article>
-                <a href="#">
-                    <p>Eigenwijze Drum 'n' Bass</p>
-                    <h2>Camo & Krooked</h2>
-                    <div class="shadow">
-                        <img src="media/camokrooked.jpg" alt="camokrooked">
-                    </div>
-                </a>
-            </article>
+            <div class="achtergrond">
+                <article>
+                    <a href="#">
+                        <p>Vinylnerd neemt zijn halve zaak mee</p>
+                        <h2>Antal / Dance</h2>
+                        <div class="shadow">
+                            <img src="media/antal.jpg" alt="antal">
+                        </div>
+                    </a>
+                </article>
+            </div>
 
-            <article>
-                <a href="#">
-                    <p>Utrechtse met uitgekiende grooves</p>
-                    <h2>Carista</h2>
-                    <div class="shadow">
-                        <img src="media/carista.jpg" alt="carista">
-                    </div>
-                </a>
-            </article>
+            <div class="achtergrond">
+                <article>
+                    <a href="#">
+                        <p>Eigenwijze Drum 'n' Bass</p>
+                        <h2>Camo & Krooked / Dance</h2>
+                        <div class="shadow">
+                            <img src="media/camokrooked.jpg" alt="camokrooked">
+                        </div>
+                    </a>
+                </article>
+            </div>
 
-            <article>
-                <a href="#">
-                    <p>Modulaire Synthtechno</p>
-                    <h2>Colin Benders</h2>
-                    <div class="shadow">
-                        <img src="media/colinbenders.jpg" alt="colinbenders">
-                    </div>
-                </a>
-            </article>
+            <div class="achtergrond">
+                <article>
+                    <a href="#">
+                        <p>Utrechtse met uitgekiende grooves</p>
+                        <h2>Carista / Dance</h2>
+                        <div class="shadow">
+                            <img src="media/carista.jpg" alt="carista">
+                        </div>
+                    </a>
+                </article>
+            </div>
 
-            <article>
-                <a href="#">
-                    <p>Oogverblindede rapper met geniale tekst</p>
-                    <h2>Donnie</h2>
-                    <div class="shadow">
-                        <img src="media/donnie.jpg" alt="donnie">
-                    </div>
-                </a>
-            </article>
+            <div class="achtergrond">
+                <article>
+                    <a href="#">
+                        <p>Modulaire Synthtechno</p>
+                        <h2>Colin Benders / Electronic</h2>
+                        <div class="shadow">
+                            <img src="media/colinbenders.jpg" alt="colinbenders">
+                        </div>
+                    </a>
+                </article>
+            </div>
+
+            <div class="achtergrond">
+                <article>
+                    <a href="#">
+                        <p>Oogverblindede rapper met geniale tekst</p>
+                        <h2>Donnie / Hiphop</h2>
+                        <div class="shadow">
+                            <img src="media/donnie.jpg" alt="donnie">
+                        </div>
+                    </a>
+                </article>
+            </div>
         </section>
 
     </main>
     <footer>
-
         <ul>
             <li><a href="">Pers</a></li>
             <li><a href="">Colofon</a></li>
@@ -175,6 +223,8 @@
             <li><a href=""><img src="media/npo3fm.png" alt=""></a></li>
         </ul>
     </footer>
+
+    <script src="js/script.js"></script>
 </body>
 
 </html>

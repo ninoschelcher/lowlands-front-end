@@ -11,33 +11,50 @@
 
 body {
     margin: 0;
+    font-family: "Open89", sans-serif;
 }
 
-a,
-a:link,
-a:visited,
-a:hover,
-a:active header {
-    overflow: hidden;
-    width: 100vw;
-    margin: 0;
+ul {
+    list-style: none;
+    display: flex;
+}
 
+a:focus {
+    border-bottom: 1px solid blue;
+}
+
+h1,
+h2,
+h3,
+p {
+    font-family: "Open89", sans-serif;
+}
+
+
+/*******************************************/
+/************Header & Navigatie*************/
+/*******************************************/
+header {
+    background-color: #0F25CC;
+    height: 100%;
+    overflow-x: hidden;
 }
 
 nav {
-    background-color: #0F25CC;
     height: 10vh;
-    position: fixed;
     line-height: 10vh;
     box-shadow: inset 0 -16px 12px -10px rgba(0, 0, 0, .85);
     width: 100vw;
     overflow: hidden;
     z-index: 999;
+    transition: 0.6s all;
+}
+
+header nav.hamburger {
+    top: 3em;
 }
 
 nav ul {
-    display: flex;
-    list-style-type: none;
     justify-content: space-around;
     margin: 0 auto;
     text-transform: uppercase;
@@ -65,11 +82,9 @@ nav ul li a.active::before {
 nav ul li a {
     text-decoration: none;
     color: #fff;
-    font-family: "Open89", sans-serif;
     transition: 0.3s;
     font-weight: 300;
-    font-size: 0.9m;
-    padding: 20px 25px;
+    font-size: 0.9em;
 }
 
 nav ul li a:hover {
@@ -80,29 +95,63 @@ nav ul li:nth-child(5) img {
     padding-top: 2vh;
 }
 
-.home main #banner {
-    max-height: 60vh;
+header #hamburgerknop {
+    display: none;
+    color: #fff;
+    padding: 1em 2em;
+    font-size: 1em;
+    border-color: #0F25CC;
+    background-color: #0F25CC;
 }
 
-.home main #banner #myVideo {
+#meermenu {
+    position: absolute;
+    top: -50em;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 38, 204, .9);
     width: 100%;
-    object-fit: cover;
-    max-height: 60vh;
+    height: 100%;
+    z-index: 999;
+    transition: 0.5s ease-out;
 }
 
-.home main section:nth-child(2) {
-    background-image: url("../media/homebackground.png");
-    background-size: cover;
-    background-position: center center;
-    width: 100%;
+#meermenu.aan {
+    top: 0;
+}
+
+#meermenu ul {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30vh;
+}
+
+#meermenu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 3em;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+#meermenu ul li a:hover {
+    color: #4cd066;
+}
+
+#meermenu #close {
+    color: #fff;
+    text-decoration: none;
+    z-index: 9999;
+    font-size: 3em;
 }
 
 /*************************************************/
 /*********************Programma*******************/
 /*************************************************/
-
-.programma #banner #myVideo,
-.tameimpala #banner #myVideo {
+.programma>video,
+.tameimpala>video {
     width: 100%;
     object-fit: cover;
     height: 60vh;
@@ -114,98 +163,144 @@ nav ul li:nth-child(5) img {
     background-image: url("../media/programma-background.png");
 }
 
-.programma #filters {
+.programma>div {
     height: 13vh;
     background-color: #4CD066;
     margin: -2% 0;
     box-shadow: inset 0 -16px 12px -10px rgba(0, 0, 0, .85);
 }
 
-.fa,
-.fas {
+.programma .fa,
+.programma .fas {
     font-weight: 900;
     font-size: 1.8em;
 }
 
-.programma #filters ul {
-    display: flex;
+.programma ul:first-child {
     padding: 1em;
     margin: 1em 8em;
     padding-inline-start: 0;
 }
 
-.programma #filters ul li {
-    list-style: none;
-    font-family: "Open89";
+.programma ul:first-child li button {
     text-transform: uppercase;
     line-height: 2em;
     padding: 1em;
-    transition: 0.3s;
-}
-
-.programma #filters ul li a {
+    border: none;
+    background-color: transparent;
     text-decoration: none;
     transition: 0.3s;
     color: #fff;
+    font-size: 1em;
+    font-family: "Open89", sans-serif;
 }
 
-.programma #filters ul li a:hover {
+.programma ul:first-child li button:hover {
     color: #0026cc;
 }
 
-.programma #filters ul li:first-child a::before,
-.programma #filters ul li:nth-child(2) a::before {
+.programma ul:first-child li:first-child button::before,
+.programma ul:first-child li:nth-child(2) button::before {
     content: '\f067';
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
     padding-right: 0.7vw;
 }
 
-.programma #filters ul li:nth-child(-0n+2) {
+.programma > ul:first-child li:nth-child(-0n+2) {
     margin-right: auto;
 }
 
-.programma section:nth-child(3) {
-    margin-top: 4vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 5vh 7vw;
+.programma #criteria {
+    background-color: #4CD066;
+    padding: 1em 5em;
+    box-shadow: inset 10px -16px 12px -10px rgba(0, 0, 0, .85);
+    margin-top: 23px;
+    transition: all 3s linear;
+    display: none;
+    height: 100%;
+}
+
+#criteria.toon {
+    display: block;
+}
+
+.programma #criteria ul {
+    flex-wrap: wrap;
+    display: flex;
+    padding: 1em;
+    margin:
+}
+
+.programma #criteria ul li button {
+    font-family: "Open89", sans-serif;
+    background-color: #63D576;
+    border: none;
+    color: #fff;
+    font-size: 1em;
+    padding: 1em;
+    margin: 0.3em;
+    transition: 0.3s;
+}
+
+.programma #criteria ul li button.active {
+    background-color: #0026cc;
+}
+
+.programma #criteria ul li button:hover {
+    background-color: #0026cc;
+    cursor: pointer;
 }
 
 .programma section:nth-child(4) {
     margin-top: 4vh;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 3fr));
+    grid-template-columns: 1fr 1fr;
+    padding: 5vh 7vw;
+    grid-gap: 6em;
+}
+
+.programma section:nth-child(5) {
+    margin-top: 4vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     padding: 5vh 7vw;
     grid-gap: 2em;
 }
 
-.programma section:nth-child(3) a {
+.programma section:nth-child(4) a {
     text-decoration: none;
     color: #000;
 }
 
-.programma #tweekolom article {
+.programma section:nth-child(4) article {
     background-color: #4CD066;
     box-shadow: inset 0 0 15px 11px rgba(0, 0, 0, .85);
     transition: 0.3s;
-    margin: 2.5em auto;
     padding: 3vw;
+    min-height: 457px;
 }
 
-.programma #driekolom article {
+.programma section:nth-child(5) article {
     background-color: #4CD066;
     box-shadow: inset 0 0 15px 11px rgba(0, 0, 0, .85);
     transition: 0.3s;
     padding: 2vw;
+    min-height: 353px;
 }
 
 .programma section article:hover {
-    transform: scale(.75);
+    transform: scale(.85);
 }
 
+.programma section .achtergrond {
+    background-image: url("../media/inset-background-2.png");
+    background-position: center center;
+    background-size: cover;
+}
+
+
 .programma section article p:first-child {
-    font-family: "Open89";
     color: #fff;
     font-size: 0.5em;
     margin: 0;
@@ -213,12 +308,11 @@ nav ul li:nth-child(5) img {
     text-transform: uppercase;
 }
 
-.programma #driekolom a {
+.programma section:nth-child(5) a {
     color: transparent;
 }
 
 .programma section article h2 {
-    font-family: "Open89";
     text-transform: uppercase;
     font-size: 1.8em;
     letter-spacing: 2px;
@@ -227,18 +321,18 @@ nav ul li:nth-child(5) img {
     color: #000;
 }
 
-.programma section article img {
+.shadow img {
     z-index: -1;
     width: 100%;
 }
 
-.programma section article .shadow {
+.shadow {
     position: relative;
     width: 100%;
     overflow: hidden;
 }
 
-.programma section article .shadow::after {
+.shadow::after {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -249,7 +343,7 @@ nav ul li:nth-child(5) img {
 }
 
 /*************************************************/
-/*******************Tame Impala*******************/
+/**********Tame Impala Artiest Pagina*************/
 /*************************************************/
 
 .tameimpala section {
@@ -268,14 +362,12 @@ nav ul li:nth-child(5) img {
 }
 
 .tameimpala section article:first-child p:first-child {
-    font-family: "Open89";
     text-transform: uppercase;
     color: #fff;
     margin: 0;
 }
 
 .tameimpala section article h1 {
-    font-family: "Open89";
     font-size: 3em;
     text-transform: uppercase;
     margin: 0.5em 0em;
@@ -290,20 +382,16 @@ nav ul li:nth-child(5) img {
     word-spacing: 0.2em;
 }
 
-.tameimpala iframe {
-    width: 70%;
-    height: 50vh;
+.tameimpala article:last-child {
+    display: flex;
 }
 
 .tameimpala article:last-child ul {
-    float: right;
-}
-
-.tameimpala ul li {
-    list-style: none;
-    font-family: "Open89";
+    display: flex;
+    flex-direction: column;
     padding-right: 2em;
 }
+
 
 .tameimpala ul li a::before {
     content: '\f0da';
@@ -324,24 +412,18 @@ nav ul li:nth-child(5) img {
     text-transform: uppercase;
 }
 
-
+.tameimpala article iframe {
+    height: 25vw;
+}
 
 /*************************************************/
 /*****************Footer**************************/
 /*************************************************/
 
-footer {
-    font-family: "Open89";
-}
-
-footer ul {
-    display: flex;
-    list-style: none;
-}
-
 footer ul:first-child {
     background-color: #0026cc;
     height: 20vh;
+    margin: 0;
     line-height: 9em;
     padding-left: 15%;
     border-top: 1px solid #fff;
@@ -354,9 +436,7 @@ footer ul:first-child a {
 }
 
 footer ul:last-child {
-    display: flex;
     justify-content: space-between;
-    list-style: none;
     background-color: #fff;
     height: 14vh;
     align-items: center;
@@ -376,67 +456,102 @@ footer ul:last-child li img {
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 565px) {
 
-
-    .programma section:nth-child(3) article {
-        margin: 0;
-        max-width: 80%;
-    }
-
-
-    .programma section:nth-child(4) {
-        grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
-
+    .programma section:nth-child(4) article,
+    .programma section:nth-child(5) article {
+        margin: 0 auto;
+        width: 100%;
+        padding: 2em;
     }
 
 }
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 1230px) {
-    .tameimpala article:last-child ul {
-        float: none;
+@media only screen and (max-device-width :600px) {
+
+    header #hamburgerknop {
+        display: block;
     }
 
-    .programma section:nth-child(3),
-    .programma section:nth-child(4) {
-        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    }
-
-}
-
-@media only screen and (min-device-width : 320px) and (max-device-width : 800px) {
-    header {
-        overflow-x: scroll;
+    header nav {
+        height: 80%;
+        text-align: center;
+        position: absolute;
+        top: -40em;
+        background-color: #0026cc;
     }
 
     header nav ul {
-        justify-content: flex-start;
+        flex-direction: column;
     }
 
-    .programma #filters ul {
-        margin: 0;
-        overflow: hidden;
+    nav ul li:nth-child(5) img {
+        display: none;
     }
 
     .tameimpala section article {
         max-width: 80%;
     }
 
-    footer ul:first-child a {
-        font-size: 0.5em;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 800px) {
+
+    .programma ul:first-child {
+        margin: 0;
+        overflow: hidden;
     }
 
     .programma #filters ul li a {
         font-size: 0.8em;
     }
 
+    .programma section:nth-child(4),
+    .programma section:nth-child(5) {
+        grid-template-columns: 1fr !important;
+    }
+
+    .programma section:nth-child(4) article,
+    .programma section:nth-child(5) article {
+        padding: 6vw;
+    }
+
+    footer ul:first-child a {
+        font-size: 0.8em;
+    }
+
+    footer ul:first-child {
+        padding-left: 0;
+    }
+
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 900px) {
+
+    .tameimpala article:last-child {
+        display: block;
+    }
 
 }
 
 @media only screen and (max-device-width :1250px) {
-    .tameimpala article:last-child iframe {
-        width: 100%;
+
+    nav ul li {
+        margin: 0em 1em;
     }
 
-    .tameimpala article:last-child ul {
-        float: none;
+    #meermenu ul li a {
+        font-size: 2em;
     }
+
+    .programma section:nth-child(4) {
+        grid-gap: 2em;
+    }
+
+    .programma section:nth-child(4) article {
+        min-height: 100%;
+    }
+
+    .programma section:nth-child(5) {
+        grid-template-columns: 1fr 1fr;
+    }
+
 }
