@@ -13,7 +13,7 @@
 
 <body>
     <header>
-        <button id="hamburgerknop"><i class="fas fa-bars"></i></button>
+        <button class="hamburgerknop"><i class="fas fa-bars"></i></button>
         <nav>
             <ul>
                 <li><a href="blokkenschema.html">Blokkenschema</a></li>
@@ -24,13 +24,13 @@
                 <li><a href="tickets">Tickets</a></li>
                 <li><a href="plattegrond">Plattegrond</a></li>
                 <li><a href="english">English</a></li>
-                <li><a id="meer" href="#">Meer</a></li>
+                <li><a class="meer" href="#">Meer</a></li>
             </ul>
         </nav>
     </header>
 
-    <div id="meermenu">
-        <a id="close" href="#">X</a>
+    <div class="meermenu">
+        <a class="close" href="#">X</a>
         <ul>
             <li><a href="#">Achtergrond</a></li>
             <li><a href="#">Green & Clean</a></li>
@@ -41,15 +41,15 @@
 
 
 
-    <main class="programma">
-        
+    <main id="programma">
+
         <video autoplay muted loop>
             <source src="media/programmavideo.mp4" type="video/mp4">
         </video>
 
         <div>
             <ul>
-                <li><button class="active" id="categorie">Categorieën</button></li>
+                <li><button id="categorie">Categorieën</button></li>
                 <li><button>Favorieten</button></li>
                 <li><button><i class="fas fa-ellipsis-h"></i></button></li>
                 <li><button><i class="fas fa-list"></i></button></li>
@@ -57,20 +57,58 @@
         </div>
 
         <div id="criteria">
-            <ul>
-                <li><button>Alles</button></li>
-                <li><button>Muziek</button></li>
-                <li><button>Wetenschap</button></li>
-                <li><button>Comedy</button></li>
-                <li><button>Theater en Dans</button></li>
-                <li><button>Literatuur</button></li>
-                <li><button>Specials</button></li>
-                <li><button>Buitentheater</button></li>
-                <li><button>Film</button></li>
-                <li><button>Kunst</button></li>
-                <li><button>Tallk Talkk Tallk</button></li>
-            </ul>
+            <form>
+                <div>
+                    <input type="checkbox" id="alles">
+                    <label for="alles">Alles</label>
+                </div>
 
+                <div>
+                    <input type="checkbox" id="muziek">
+                    <label for="muziek">Muziek</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="wetenschap">
+                    <label for="wetenschap">Wetenschap</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="comedy">
+                    <label for="comedy">Comedy</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="theaterdans">
+                    <label for="theaterdans">Theater en Dans</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="literatuur">
+                    <label for="literatuur">Literatuur</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="buitentheater">
+                    <label for="buitentheater">Buitentheater</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="film">
+                    <label for="film">Film</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="kunst">
+                    <label for="kunst">Kunst</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="talk">
+                    <label for="talk">Tallk tallk tallk</label>
+                </div>
+
+            </form>
         </div>
 
         <section>
@@ -201,27 +239,32 @@
 
     </main>
     <footer>
-        <ul>
-            <li><a href="">Pers</a></li>
-            <li><a href="">Colofon</a></li>
-            <li><a href="">Adverteren</a></li>
-            <li><a href="">Privacy</a></li>
-            <li><a href="">Cookie Policy</a></li>
-        </ul>
+
+        <nav>
+            <ul>
+                <li><a href="">Pers</a></li>
+                <li><a href="">Colofon</a></li>
+                <li><a href="">Adverteren</a></li>
+                <li><a href="">Privacy</a></li>
+                <li><a href="">Cookie Policy</a></li>
+            </ul>
+        </nav>
 
         <ul>
-            <li><a href=""><img src="media/heineken.png" alt=""></a></li>
-            <li><a href=""><img src="media/rabobank.png" alt=""></a></li>
-            <li><a href=""><img src="media/cocacola.png" alt=""></a></li>
-            <li><a href=""><img src="media/bacardi.png" alt=""></a></li>
-            <li><a href=""><img src="media/samsung.png" alt=""></a></li>
-            <li><a href=""><img src="media/cm.jpg" alt=""></a></li>
-            <li><a href=""><img src="media/uber.png" alt=""></a></li>
-            <li><a href=""><img src="media/vpro.png" alt=""></a></li>
-            <li><a href=""><img src="media/3voor12.png" alt=""></a></li>
-            <li><a href=""><img src="media/npo3.png" alt=""></a></li>
-            <li><a href=""><img src="media/npo3fm.png" alt=""></a></li>
+            <li><a href="https://www.heineken.com/nl/agegateway"><img src="media/heineken.png" alt="heineken logo"></a>
+            </li>
+            <li><a href="https://www.rabobank.nl"><img src="media/rabobank.png" alt="rabobank logo"></a></li>
+            <li><a href="https://www.cocacola.nl"><img src="media/cocacola.png" alt="coca cola logo"></a></li>
+            <li><a href="https://www.bacardi.nl"><img src="media/bacardi.png" alt="bacardi loog"></a></li>
+            <li><a href="https://www.samsung.nl"><img src="media/samsung.png" alt="samsung logo"></a></li>
+            <li><a href="https://www.cm.nl"><img src="media/cm.jpg" alt="cm logo"></a></li>
+            <li><a href="https://www.uber.nl"><img src="media/uber.png" alt="uber logo"></a></li>
+            <li><a href="https://www.vpro.nl"><img src="media/vpro.png" alt="vpro logo"></a></li>
+            <li><a href="https://www.3voor12.nl"><img src="media/3voor12.png" alt="3voor12 logo"></a></li>
+            <li><a href="https://www.npo3.nl"><img src="media/npo3.png" alt="npo3 logo"></a></li>
+            <li><a href="https://www.npo3fm.nl"><img src="media/npo3fm.png" alt="npo3fm logo"></a></li>
         </ul>
+
     </footer>
 
     <script src="js/script.js"></script>

@@ -23,6 +23,10 @@ a:focus {
     border-bottom: 1px solid blue;
 }
 
+a:visited {
+    color: #d1d1d1;
+}
+
 h1,
 h2,
 h3,
@@ -34,13 +38,14 @@ p {
 /*******************************************/
 /************Header & Navigatie*************/
 /*******************************************/
+
 header {
     background-color: #0F25CC;
     height: 100%;
     overflow-x: hidden;
 }
 
-nav {
+header nav {
     height: 10vh;
     line-height: 10vh;
     box-shadow: inset 0 -16px 12px -10px rgba(0, 0, 0, .85);
@@ -54,7 +59,7 @@ header nav.hamburger {
     top: 3em;
 }
 
-nav ul {
+header nav ul {
     justify-content: space-around;
     margin: 0 auto;
     text-transform: uppercase;
@@ -64,22 +69,7 @@ nav ul {
     color: #fff;
 }
 
-nav ul li:last-child a::after {
-    content: '\f0d7';
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    padding-left: 0.5vw;
-}
-
-nav ul li a.active::before {
-    content: '\f0da';
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    padding-right: 0.3vw;
-    transition: 0.3s;
-}
-
-nav ul li a {
+header nav ul li a {
     text-decoration: none;
     color: #fff;
     transition: 0.3s;
@@ -87,15 +77,30 @@ nav ul li a {
     font-size: 0.9em;
 }
 
-nav ul li a:hover {
+header nav ul li a:hover {
     color: #4cd066;
 }
 
-nav ul li:nth-child(5) img {
+header nav ul li:last-child a::after {
+    content: '\f0d7';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    padding-left: 0.5vw;
+}
+
+header nav ul li a.active::before {
+    content: '\f0da';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    padding-right: 0.3vw;
+    transition: 0.3s;
+}
+
+header nav ul li:nth-child(5) img {
     padding-top: 2vh;
 }
 
-header #hamburgerknop {
+header .hamburgerknop {
     display: none;
     color: #fff;
     padding: 1em 2em;
@@ -104,7 +109,7 @@ header #hamburgerknop {
     background-color: #0F25CC;
 }
 
-#meermenu {
+.meermenu {
     position: absolute;
     top: -50em;
     left: 0;
@@ -117,18 +122,18 @@ header #hamburgerknop {
     transition: 0.5s ease-out;
 }
 
-#meermenu.aan {
+.meermenu.aan {
     top: 0;
 }
 
-#meermenu ul {
+.meermenu ul {
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-top: 30vh;
 }
 
-#meermenu ul li a {
+.meermenu ul li a {
     color: #fff;
     text-decoration: none;
     font-size: 3em;
@@ -136,11 +141,11 @@ header #hamburgerknop {
     text-transform: uppercase;
 }
 
-#meermenu ul li a:hover {
+.meermenu ul li a:hover {
     color: #4cd066;
 }
 
-#meermenu #close {
+.meermenu .close {
     color: #fff;
     text-decoration: none;
     z-index: 9999;
@@ -150,8 +155,8 @@ header #hamburgerknop {
 /*************************************************/
 /*********************Programma*******************/
 /*************************************************/
-.programma>video,
-.tameimpala>video {
+#programma>video,
+#tameimpala>video {
     width: 100%;
     object-fit: cover;
     height: 60vh;
@@ -159,30 +164,30 @@ header #hamburgerknop {
     overflow: hidden;
 }
 
-.programma {
+#programma {
     background-image: url("../media/programma-background.png");
 }
 
-.programma>div {
+#programma>div {
     height: 13vh;
     background-color: #4CD066;
     margin: -2% 0;
     box-shadow: inset 0 -16px 12px -10px rgba(0, 0, 0, .85);
 }
 
-.programma .fa,
-.programma .fas {
+#programma .fa,
+#programma .fas {
     font-weight: 900;
     font-size: 1.8em;
 }
 
-.programma ul:first-child {
+#programma ul:first-child {
     padding: 1em;
     margin: 1em 8em;
     padding-inline-start: 0;
 }
 
-.programma ul:first-child li button {
+#programma ul:first-child li button {
     text-transform: uppercase;
     line-height: 2em;
     padding: 1em;
@@ -195,44 +200,65 @@ header #hamburgerknop {
     font-family: "Open89", sans-serif;
 }
 
-.programma ul:first-child li button:hover {
+#programma ul:first-child li button:hover {
     color: #0026cc;
 }
 
-.programma ul:first-child li:first-child button::before,
-.programma ul:first-child li:nth-child(2) button::before {
+#programma ul:first-child li:first-child button::before,
+#programma ul:first-child li:nth-child(2) button::before {
     content: '\f067';
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
     padding-right: 0.7vw;
 }
 
-.programma > ul:first-child li:nth-child(-0n+2) {
+#programma ul:first-child li:nth-child(-0n+2) {
     margin-right: auto;
 }
 
-.programma #criteria {
+#programma #criteria {
     background-color: #4CD066;
     padding: 1em 5em;
     box-shadow: inset 10px -16px 12px -10px rgba(0, 0, 0, .85);
     margin-top: 23px;
-    transition: all 3s linear;
+    transition: all 0.3s linear;
     display: none;
-    height: 100%;
+    height: 25vh;
 }
 
-#criteria.toon {
+#programma #criteria.toon {
     display: block;
 }
 
-.programma #criteria ul {
-    flex-wrap: wrap;
+#criteria form {
     display: flex;
-    padding: 1em;
-    margin:
 }
 
-.programma #criteria ul li button {
+#criteria form div {
+    margin: 0 0.5em;
+}
+
+#programma form input {
+    position: relative;
+    visibility: hidden;
+}
+
+#programma form label {
+    visibility: visible;
+}
+
+#programma form input:checked+label {
+    background-color: #0026cc;
+}
+
+#programma form input+label {
+    background-color: #63D576;
+    color: #fff;
+    padding: 1em;
+    text-transform: uppercase;
+}
+
+#programma #criteria ul li button {
     font-family: "Open89", sans-serif;
     background-color: #63D576;
     border: none;
@@ -243,16 +269,16 @@ header #hamburgerknop {
     transition: 0.3s;
 }
 
-.programma #criteria ul li button.active {
+#programma #criteria ul li button.active {
     background-color: #0026cc;
 }
 
-.programma #criteria ul li button:hover {
+#programma #criteria ul li button:hover {
     background-color: #0026cc;
     cursor: pointer;
 }
 
-.programma section:nth-child(4) {
+#programma section:nth-child(4) {
     margin-top: 4vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -260,7 +286,7 @@ header #hamburgerknop {
     grid-gap: 6em;
 }
 
-.programma section:nth-child(5) {
+#programma section:nth-child(5) {
     margin-top: 4vh;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -268,12 +294,12 @@ header #hamburgerknop {
     grid-gap: 2em;
 }
 
-.programma section:nth-child(4) a {
+#programma section:nth-child(4) a {
     text-decoration: none;
     color: #000;
 }
 
-.programma section:nth-child(4) article {
+#programma section:nth-child(4) article {
     background-color: #4CD066;
     box-shadow: inset 0 0 15px 11px rgba(0, 0, 0, .85);
     transition: 0.3s;
@@ -281,7 +307,7 @@ header #hamburgerknop {
     min-height: 457px;
 }
 
-.programma section:nth-child(5) article {
+#programma section:nth-child(5) article {
     background-color: #4CD066;
     box-shadow: inset 0 0 15px 11px rgba(0, 0, 0, .85);
     transition: 0.3s;
@@ -289,18 +315,18 @@ header #hamburgerknop {
     min-height: 353px;
 }
 
-.programma section article:hover {
+#programma section article:hover {
     transform: scale(.85);
 }
 
-.programma section .achtergrond {
+#programma section .achtergrond {
     background-image: url("../media/inset-background-2.png");
     background-position: center center;
     background-size: cover;
 }
 
 
-.programma section article p:first-child {
+#programma section article p:first-child {
     color: #fff;
     font-size: 0.5em;
     margin: 0;
@@ -308,11 +334,11 @@ header #hamburgerknop {
     text-transform: uppercase;
 }
 
-.programma section:nth-child(5) a {
+#programma section:nth-child(5) a {
     color: transparent;
 }
 
-.programma section article h2 {
+#programma section article h2 {
     text-transform: uppercase;
     font-size: 1.8em;
     letter-spacing: 2px;
@@ -322,14 +348,12 @@ header #hamburgerknop {
 }
 
 .shadow img {
-    z-index: -1;
     width: 100%;
 }
 
 .shadow {
     position: relative;
     width: 100%;
-    overflow: hidden;
 }
 
 .shadow::after {
@@ -346,13 +370,13 @@ header #hamburgerknop {
 /**********Tame Impala Artiest Pagina*************/
 /*************************************************/
 
-.tameimpala section {
+#tameimpala section {
     background-image: url("../media/tameimpalabackground.png");
     padding: 4em 0em;
     margin: -2% 0;
 }
 
-.tameimpala section article {
+#tameimpala section article {
     background-color: #4CD066;
     max-width: 60%;
     margin: 2em auto;
@@ -361,58 +385,62 @@ header #hamburgerknop {
     min-height: 50vh;
 }
 
-.tameimpala section article:first-child p:first-child {
+#tameimpala section article:first-child p:first-child {
     text-transform: uppercase;
     color: #fff;
     margin: 0;
 }
 
-.tameimpala section article h1 {
+#tameimpala section article h1 {
     font-size: 3em;
     text-transform: uppercase;
     margin: 0.5em 0em;
 }
 
-.tameimpala section article img {
-    max-width: 45vw;
-}
-
-.tameimpala section article:first-child p:last-child {
+#tameimpala section article:first-child p:last-child {
     font-family: "Montserrat";
     word-spacing: 0.2em;
 }
 
-.tameimpala article:last-child {
+#tameimpala article:last-child {
     display: flex;
 }
 
-.tameimpala article:last-child ul {
+#tameimpala article:last-child ul {
     display: flex;
     flex-direction: column;
     padding-right: 2em;
 }
 
+#tameimpala article:last-child ul li {
+    margin: 0.3em 0;
+}
 
-.tameimpala ul li a::before {
+#tameimpala ul li a::before {
     content: '\f0da';
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
     padding-right: 0.3vw;
 }
 
-.tameimpala section ul li a {
+#tameimpala section ul li a {
     text-decoration: none;
     color: #fff;
     position: relative;
     text-transform: uppercase;
+    transition: 0.3s;
 }
 
-.tameimpala section ul li p {
+#tameimpala section ul li a:hover {
+    color: #0026cc;
+}
+
+#tameimpala section ul li p {
     color: #000;
     text-transform: uppercase;
 }
 
-.tameimpala article iframe {
+#tameimpala article iframe {
     height: 25vw;
 }
 
@@ -420,22 +448,21 @@ header #hamburgerknop {
 /*****************Footer**************************/
 /*************************************************/
 
-footer ul:first-child {
+footer>nav {
     background-color: #0026cc;
-    height: 20vh;
+    height: 100%;
     margin: 0;
-    line-height: 9em;
-    padding-left: 15%;
+    padding: 4em 0 4em 14em;
     border-top: 1px solid #fff;
 }
 
-footer ul:first-child a {
+footer>nav ul a {
     color: #fff;
     padding-right: 2em;
     text-decoration: none;
 }
 
-footer ul:last-child {
+footer>ul {
     justify-content: space-between;
     background-color: #fff;
     height: 14vh;
@@ -444,7 +471,7 @@ footer ul:last-child {
     margin: 0 auto;
 }
 
-footer ul:last-child li img {
+footer>ul:last-child li img {
     width: 100%;
     height: auto;
 }
@@ -454,20 +481,72 @@ footer ul:last-child li img {
 /*****************Media Queries*******************/
 /*************************************************/
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 565px) {
+@media only screen and (max-width :1250px) {
 
-    .programma section:nth-child(4) article,
-    .programma section:nth-child(5) article {
-        margin: 0 auto;
-        width: 100%;
-        padding: 2em;
+    nav ul li {
+        margin: 0em 1em;
+    }
+
+    #meermenu ul li a {
+        font-size: 2em;
+    }
+
+    #programma section:nth-child(4) {
+        grid-gap: 2em;
+    }
+
+    #programma section:nth-child(4) article {
+        min-height: 100%;
+    }
+
+    #programma section:nth-child(5) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    footer > nav {
+        padding: 4em 0;
     }
 
 }
 
-@media only screen and (max-device-width :600px) {
+@media only screen and (max-width : 800px) {
 
-    header #hamburgerknop {
+    #programma ul:first-child {
+        margin: 0;
+        overflow: hidden;
+    }
+
+    #programma #filters ul li a {
+        font-size: 0.8em;
+    }
+
+    #programma section:nth-child(4),
+    #programma section:nth-child(5) {
+        grid-template-columns: 1fr !important;
+    }
+
+    #programma section:nth-child(4) article,
+    #programma section:nth-child(5) article {
+        padding: 6vw;
+    }
+
+    #tameimpala article:last-child {
+        display: block;
+    }
+
+    footer ul:first-child a {
+        font-size: 0.8em;
+    }
+
+    footer ul:first-child {
+        padding-left: 0;
+    }
+
+}
+
+@media only screen and (max-width :600px) {
+
+    header .hamburgerknop {
         display: block;
     }
 
@@ -487,71 +566,15 @@ footer ul:last-child li img {
         display: none;
     }
 
-    .tameimpala section article {
+    #programma section:nth-child(4) article,
+    #programma section:nth-child(5) article {
+        margin: 0 auto;
+        width: 100%;
+        padding: 2em;
+    }
+
+    #tameimpala section article {
         max-width: 80%;
-    }
-
-}
-
-@media only screen and (min-device-width : 320px) and (max-device-width : 800px) {
-
-    .programma ul:first-child {
-        margin: 0;
-        overflow: hidden;
-    }
-
-    .programma #filters ul li a {
-        font-size: 0.8em;
-    }
-
-    .programma section:nth-child(4),
-    .programma section:nth-child(5) {
-        grid-template-columns: 1fr !important;
-    }
-
-    .programma section:nth-child(4) article,
-    .programma section:nth-child(5) article {
-        padding: 6vw;
-    }
-
-    footer ul:first-child a {
-        font-size: 0.8em;
-    }
-
-    footer ul:first-child {
-        padding-left: 0;
-    }
-
-}
-
-@media only screen and (min-device-width : 320px) and (max-device-width : 900px) {
-
-    .tameimpala article:last-child {
-        display: block;
-    }
-
-}
-
-@media only screen and (max-device-width :1250px) {
-
-    nav ul li {
-        margin: 0em 1em;
-    }
-
-    #meermenu ul li a {
-        font-size: 2em;
-    }
-
-    .programma section:nth-child(4) {
-        grid-gap: 2em;
-    }
-
-    .programma section:nth-child(4) article {
-        min-height: 100%;
-    }
-
-    .programma section:nth-child(5) {
-        grid-template-columns: 1fr 1fr;
     }
 
 }
