@@ -111,7 +111,7 @@ header .hamburgerknop {
 
 .meermenu {
     position: absolute;
-    top: -50em;
+    top: -100em;
     left: 0;
     right: 0;
     bottom: 0;
@@ -119,7 +119,7 @@ header .hamburgerknop {
     width: 100%;
     height: 100%;
     z-index: 999;
-    transition: 0.5s ease-out;
+    transition: 1.2s ease-out;
 }
 
 .meermenu.aan {
@@ -232,15 +232,17 @@ header .hamburgerknop {
 
 #criteria form {
     display: flex;
+    flex-wrap: wrap;
 }
 
 #criteria form div {
-    margin: 0 0.5em;
+    margin: 1.5em 0;
+    height: 100%;
 }
 
 #programma form input {
     position: relative;
-    visibility: hidden;
+    z-index:-1;
 }
 
 #programma form label {

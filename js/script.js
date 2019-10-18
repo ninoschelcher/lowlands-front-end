@@ -8,8 +8,7 @@ var categorieKnop = document.getElementById("categorie");
 var lijst = document.getElementById("criteria");
 
 function openCategorie() {
-    console.log("test");
-        lijst.classList.toggle("toon");
+    lijst.classList.toggle("toon");
 }
 
 categorieKnop.addEventListener("click", openCategorie);
@@ -49,10 +48,3 @@ function hamburgerMenu() {
 }
 
 hamburger.addEventListener("click", hamburgerMenu);
-
-//categorie filteren
-var artiestBlokjes = document.querySelectorAll(".achtergrond");
-
-artiestBlokjes.forEach(function(artiestblok){
-    artiestblok.classList.add("hide");
-});
